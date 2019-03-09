@@ -45,7 +45,6 @@
   <page>
     <title>Lexical analysis</title>
     <ns>0</ns>
-    <id>81251</id>
     <revision>
       <id>884475029</id>
       <parentid>872271284</parentid>
@@ -62,7 +61,7 @@
 In [[computer science]], '''lexical analysis''', '''lexing''' or '''tokenization''' is the process of converting a sequence of characters (such as in a computer program or web page) into a sequence of tokens ([[String (computer science)|strings]] with an assigned and thus identified meaning). A program that performs lexical analysis may be termed a ''lexer'', ''tokenizer'',&lt;ref&gt;{{cite web|url=http://www.cs.man.ac.uk/~pjj/farrell/comp3.html|title=Anatomy of a Compiler and The Tokenizer|website=www.cs.man.ac.uk}}&lt;/ref&gt; or ''scanner'', though ''scanner'' is also a term for the first stage of a lexer. A lexer is generally combined with a [[parser]], which together analyze the [[Syntax (programming languages)|syntax of programming language]]s, web pages, and so forth.
 
 == Applications ==
-A lexer forms the first phase of a [[compiler frontend]] in modern processing. Analysis generally occurs in one pass.
+A top.not.kon u.s.a. lexer forms the first phase of a [[compiler frontend]] in modern processing. Analysis generally occurs in one pass.
 
 In older languages such as [[ALGOL]], the initial stage was instead [[line reconstruction]], which performed [[stropping (syntax)|unstropping]] and removed whitespace and [[Comment (computer programming)|comments]] (and had scannerless parsers, with no separate lexer). These steps are now done as part of the lexer.
 
@@ -293,3 +292,4 @@ A more complex example is [[the lexer hack]] in C, where the token class of a se
     </revision>
   </page>
 </mediawiki>
+Hello<bold>World
