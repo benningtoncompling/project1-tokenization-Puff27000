@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+#Author: Puff Marx
+#03/2019
+import sys #justin helped with argv
 import re
-#import nltk
-#from nltk import word_tokenize
-
 #after data has been cleaned of tags:
 # if regex finds a word, if word in dict
 # check to see if a dictionary with that key exists.
@@ -16,11 +16,11 @@ import re
 
 raw_wiki_file = "Wikipedia-LexicalAnalysis.xml"
 raw_sample_file = "sample.xml"
+#print(sys.argv)
+def clean_and_tokenize_XML_data():
 
-def clean_XML_data():
-
-    def clean_xml_tags():
-        with open(raw_wiki_file, 'r') as in_file:
+    def clean_xml_tags(file):
+        with open(file, 'r') as in_file:
             with open("working_file.txt", 'w+') as out_file:
                 text = in_file.read()
                 cleaned_up_text = re.sub(r'<.*?>', r' ', text) #got the question mark meaning nongreedy (smallest possible) match from stackoverflow, sub a space instead of nothing from Justin
@@ -40,15 +40,15 @@ def clean_XML_data():
                 else:
                     word_dict[all_the_words[i]] = 1
 
-            with open("lexical_analysis_out.txt", 'w+') as tsv_file:
+            with open(sys.argv[2], 'w+') as tsv_file:
                 alphabetical_word_dict = sorted(word_dict.items())
                 for key, value in sorted(alphabetical_word_dict, key=lambda x:(x[1]), reverse=True): #lambda idea from stackoverflow
                     tsv_file.write('%s\t%s\n' % (key, value)) #idea from Quora
 
-    no_tags_file = clean_xml_tags()
+    no_tags_file = clean_xml_tags(sys.argv[1])
     find_and_count_words(no_tags_file)
 
 
 
 
-clean_XML_data()
+clean_and_tokenize_XML_data()
